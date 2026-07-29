@@ -115,7 +115,8 @@ a{color:inherit;}
 [data-theme="firenze"] .section-label{color:#7a5c17;}
 [data-theme="venezia"] .section-label{color:var(--adriatic);}
 [data-theme="prosecco"] .section-label{color:var(--laurel);}
-.section-label::after{content:""; flex:1; height:1px; background:var(--line);}
+.section-label::after{content:""; flex:1; height:1px; background:var(--line); order:2;}
+.section-label .chevron{order:3; margin-left:4px; font-size:0.8em;}
 
 .card-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px;}
 .place-card{
@@ -145,25 +146,31 @@ a{color:inherit;}
 [data-theme="venezia"] .pick::before{background:var(--adriatic);}
 [data-theme="prosecco"] .pick::before{background:var(--laurel);}
 
-.highlight-list{display:flex; flex-direction:column; gap:0;}
-.highlight-row{
-  display:grid; grid-template-columns:1.4fr 2.4fr auto; gap:18px; align-items:start;
-  padding:16px 4px; border-bottom:1px solid var(--line);
-}
-.highlight-row h5{font-family:'Inter',sans-serif; font-weight:600; font-size:0.98rem; margin:0;}
-.highlight-row .note{font-size:0.88rem; color:rgba(36,31,25,0.75); margin:0;}
-.highlight-row .hlinks{display:flex; gap:12px; white-space:nowrap; font-size:0.78rem; font-weight:600;}
-.highlight-row .hlinks a{color:var(--terracotta-deep); text-decoration:none;}
-.highlight-row .hlinks a:hover{text-decoration:underline;}
-@media (max-width:720px){ .highlight-row{grid-template-columns:1fr; gap:6px;} }
+.aside-note{font-size:0.9rem; color:rgba(36,31,25,0.65); margin:14px 0 26px; font-style:italic;}
 
-.aside-note{font-size:0.9rem; color:rgba(36,31,25,0.65); margin:14px 0 0; font-style:italic;}
+/* ---------- ACCORDION ---------- */
+.chevron{display:inline-block; transition:transform 0.2s ease;}
+details[open] .chevron{transform:rotate(180deg);}
+
+.accordion{border-bottom:1px solid var(--line);}
+.accordion > summary{cursor:pointer; list-style:none;}
+.accordion > summary::-webkit-details-marker{display:none;}
+.accordion > summary::marker{content:"";}
+details.accordion > summary.section-label{margin:0; padding:44px 0 18px;}
+.accordion-body{padding-bottom:44px;}
 
 /* ---------- ITINERARIES (Roma page) ---------- */
-.itin-section{background:var(--ink); color:var(--parchment); padding:80px 0 100px;}
+.itin-section{background:var(--ink); color:var(--parchment); padding-top:80px; padding-bottom:80px;}
+.itin-section[open]{padding-bottom:100px;}
+.itin-section > summary{cursor:pointer; list-style:none;}
+.itin-section > summary::-webkit-details-marker{display:none;}
+.itin-section > summary::marker{content:"";}
+.itin-section .region-title{display:flex; align-items:center; gap:16px;}
+.itin-section .chevron{font-size:1.4rem; font-family:'JetBrains Mono',monospace;}
 .itin-section .region-tag{color:rgba(242,233,214,0.6);}
 .itin-section .region-title{color:#fff;}
 .itin-section .region-sub{color:rgba(242,233,214,0.75);}
+.itin-body > .wrap{padding-top:0;}
 
 .day-tabs{display:flex; gap:10px; margin:40px 0 36px; flex-wrap:wrap;}
 .day-tab{
