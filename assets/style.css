@@ -36,7 +36,8 @@ a{color:inherit;}
   max-width:1120px; margin:0 auto; padding:14px 24px;
   display:flex; align-items:center; gap:22px; overflow-x:auto;
 }
-.nav-brand{display:flex; align-items:baseline; gap:8px; text-decoration:none; white-space:nowrap; margin-right:8px;}
+.nav-brand{display:flex; align-items:center; gap:8px; text-decoration:none; white-space:nowrap; margin-right:8px;}
+.nav-icon{width:26px; height:26px; object-fit:contain; flex:none;}
 .nav-brand .rl{font-family:'Fraunces',serif; font-weight:700; font-size:1.15rem; color:var(--terracotta-deep);}
 .nav-brand .rest{font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; opacity:0.7;}
 .nav-links{display:flex; gap:4px; flex-wrap:nowrap;}
@@ -77,6 +78,7 @@ a{color:inherit;}
   display:flex; align-items:center; justify-content:center; color:#fff; position:relative; overflow:hidden;
 }
 .about-mark .initials{font-family:'Fraunces',serif; font-size:5rem; font-weight:700; letter-spacing:-0.02em;}
+.about-mark img{width:62%; height:62%; object-fit:contain;}
 .about h2{font-size:clamp(1.9rem,3.6vw,2.6rem); margin-bottom:18px;}
 .about p{font-size:1.02rem; color:rgba(36,31,25,0.82); margin:0 0 14px;}
 .about .signoff{font-family:'Fraunces',serif; font-style:italic; font-size:1.15rem; color:var(--terracotta-deep); margin-top:20px;}
